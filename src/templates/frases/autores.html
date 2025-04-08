@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Listado de Autores{% endblock %}
+{% block content %}
+<h1>Listado de Autores {{estado}}</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">Fecha de Fallecimiento</th>            
+        </tr>
+    </thead>
+    <tbody>
+        {% for autor in autores %}
+        <tr>
+            <th scope="row"><a href="{% url 'frases:autor_detail' autor.id %}">{{ autor.id }}</a></th>
+            <td>{{ autor.apellido }}</td>
+            <td>{{ autor.nombre }}</td>
+            <td>{{ autor.nacionalidad }}</td>
+            <td>{{ autor.fecha_nacimiento }}</td>
+            <td>{{ autor.fecha_muerte }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+{% endblock%}
