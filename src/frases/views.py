@@ -21,8 +21,6 @@ def autor_detail(request, autor_id):
         autor = Autor.objects.get(id=autor_id)
     except Autor.DoesNotExist:
         return render(request, 'frases/404.html', status=404)
-    if not autor.activo:
-        return render(request, 'frases/404.html', status=404)
     return render(request, 'frases/autor.html', {'autor': autor})
 
 def autor_json(request):
@@ -34,6 +32,17 @@ def delete_autor(request, autor_id):
         autor = Autor.objects.get(id=autor_id)
         autor.delete()
         return JsonResponse({'message': 'Autor eliminado correctamente.'}, status=200)
+    except Autor.DoesNotExist:
+        return JsonResponse({'error': 'Autor no encontrado.'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+    
+def change_status(request, autor_id):
+    try:
+        autor = Autor.objects.get(id=autor_id)
+        autor.activo = not autor.activo
+        autor.save()
+        return render(request, 'frases/autor.html', {'autor': autor})
     except Autor.DoesNotExist:
         return JsonResponse({'error': 'Autor no encontrado.'}, status=404)
     except Exception as e:

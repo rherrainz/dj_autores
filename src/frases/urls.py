@@ -10,4 +10,5 @@ urlpatterns = [
     path('autor/<int:autor_id>/', views.autor_detail, name='autor_detail'),
     path('autor/json/', views.autor_json, name='autor_json'),
     path('autor/delete/<int:autor_id>/', views.delete_autor, name='delete_autor'),
+    path('autor/change_status/<int:autor_id>/', views.change_status, name='change_status'),
 ]
