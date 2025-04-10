@@ -23,6 +23,12 @@
             <td>{{ autor.nacionalidad }}</td>
             <td>{{ autor.fecha_nacimiento }}</td>
             <td>{{ autor.fecha_muerte }}</td>
+            <td>
+                {% if autor.activo %}
+                <p class="text-success">Estado: Activo</p>
+                {% else %}
+                <p class="text-danger">Estado: Inactivo</p>
+                {% endif %}
             <td><a href="{% url 'quotes:frase_per_author' autor.id %}">Ver Frases</a></td>
         </tr>
         {% endfor %}

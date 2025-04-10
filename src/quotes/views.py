@@ -48,11 +48,8 @@ class FraseDeleteView(DeleteView):
 
 
 def frase_detail(request, frase_id):
-    try:
-        frase = Frase.objects.get(id=frase_id)
-    except Frase.DoesNotExist:
-        return render(request, 'quotes/404.html', status=404)
-    return render(request, 'quotes/frase.html', {'frase': frase})
+    frase = get_object_or_404(Frase, id=frase_id)
+    return render(request, 'quotes/frase_detail.html', {'frase': frase})
 
 
 def frase_per_author(request, author_id):

@@ -16,7 +16,7 @@ Listado de Frase
     <tbody>
         {% for frase in frases %}
         <tr>
-            <td>{{ frase.id }}</td>
+            <td><a href="{% url 'quotes:frase_detail' frase.id%}">{{ frase.id }}</a></td>
             <td>{{ frase.texto }}</td>
             <td>{{ frase.autor }}</td>
             <td>

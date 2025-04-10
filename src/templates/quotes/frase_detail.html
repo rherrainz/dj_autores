@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block title %}
-
+Detalle de Frase
 {% endblock %}
 {% block content %}
-
+<h1>Detalle de Frase</h1>
+<div class="card" style="width: 48rem;">
+    <div class="card-body">
+      <h5 class="card-title"> {{frase.texto}} </h5>
+      <h6 class="card-subtitle mb-4 text-body-secondary">{{frase.autor}}</h6>
+        <p class="card-text">Autor: {{frase.autor}}</p>
+        <p><a href="{% url 'quotes:frase_per_author' frase.autor.id %}">Ver Frases<a></p>
+        <a href="{% url 'quotes:frase_edit' frase.id %}" class="btn btn-primary"><i class="bi bi-pencil-square" ></i> Editar</a>
+        <a href="{% url 'quotes:frase_delete' frase.id %}" class="btn btn-danger"> <i class="bi bi-eraser-fill"></i> Eliminar</a>
+        <a href="javascript:history.back()" class="btn btn-success">Regresar</a>
+    </div>
+  </div>
 {% endblock%}
