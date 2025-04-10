@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+404 - Frase no encontrada
+{% endblock %}
+{% block content %}
+<h1>404 - Frase no encontrada</h1>
+<p>Lo sentimos, la frase que buscas no existe.</p>
+<p><a href="{% url 'quotes:frase_list'  %}">Volver a la lista de frases</a></p>
+{% endblock%}

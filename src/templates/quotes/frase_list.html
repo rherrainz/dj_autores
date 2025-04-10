@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Listado de Frase
+{% endblock %}
+{% block content %}
+<h1>Listado de Frases {{frases.autor}}</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Frase</th>
+            <th>Autor</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for frase in frases %}
+        <tr>
+            <td>{{ frase.id }}</td>
+            <td>{{ frase.texto }}</td>
+            <td>{{ frase.autor }}</td>
+            <td>
+                <a href="{% url 'quotes:frase_edit' frase.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'quotes:frase_delete' frase.id %}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+{% endblock%}

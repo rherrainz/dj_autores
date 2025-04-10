@@ -17,24 +17,16 @@
         <h1>Frases de Autores</h1>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="{% url 'frases:index' %}">Home</a>
-              <a class="nav-link" href="{% url 'frases:autor_list'%}">Autores Activos</a>
-              <a class="nav-link" href="{% url 'frases:inactivo_list'%}">Autores Inactivos</a>
-              <a class="nav-link" href="{% url 'frases:autor_json' %}">JSON</a>
+              <a class="nav-link active" href="{% url 'frases:autor_list'%}">Autores Activos</a>
+              <a class="nav-link active" href="{% url 'frases:inactivo_list'%}">Autores Inactivos</a>
+              <a class="nav-link active" href="{% url 'frases:autor_json' %}">JSON</a>
+              <a class="nav-link active" href="{% url 'quotes:frase_list' %}">Todas las Frases</a>
+              <a class="nav-link active" href="{% url 'quotes:frase_visibles' %}">Frases Visibles</a>
+              <a class="nav-link active" href="{% url 'quotes:frase_invisibles' %}">Frases Invisibles</a>
+              <a class="nav-link active" href="{% url 'quotes:frase_create' %}">Crear Nueva</a>
             </div>
           </div>
         </div>

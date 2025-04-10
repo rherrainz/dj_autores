@@ -10,7 +10,8 @@
             <th scope="col">Nombre</th>
             <th scope="col">Nacionalidad</th>
             <th scope="col">Fecha de Nacimiento</th>
-            <th scope="col">Fecha de Fallecimiento</th>            
+            <th scope="col">Fecha de Fallecimiento</th> 
+            <th scope="col">Frases</th>           
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
             <td>{{ autor.nacionalidad }}</td>
             <td>{{ autor.fecha_nacimiento }}</td>
             <td>{{ autor.fecha_muerte }}</td>
+            <td><a href="{% url 'quotes:frase_per_author' autor.id %}">Ver Frases</a></td>
         </tr>
         {% endfor %}
     </tbody>

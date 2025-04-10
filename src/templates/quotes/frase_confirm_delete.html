@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+Confirmación de eliminación de Frase
+{% endblock %}
+
+{% block content %}
+<h1>Confirmación de eliminación de Frase</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>¿Estás seguro de que deseas eliminar "{{ object }}"?</p>
+    <input type="submit" value="Confirmar">
+    <a href="{% url 'quotes:frase_list' %}">Cancelar</a>
+</form>
+{% endblock%}

@@ -14,8 +14,8 @@
           {% else %}
           <p class="text-danger">Estado: Inactivo</p>
           {% endif %}
-
-        </p></a>
+       </p></a>
+       <p><a href="{% url 'quotes:frase_per_author' autor.id%}">Ver Frases<a></p>
         <a href="{% url 'frases:delete_autor' autor.id %}" class="card-link text-danger"> <i class="bi bi-eraser-fill"></i> Eliminar</a>
       <br>
       <a href="javascript:history.back()" class="card-link">Regresar</a>
