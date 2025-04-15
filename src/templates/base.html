@@ -37,6 +37,13 @@
       {% block content %}
       <!-- Main content goes here -->
       {% endblock %}
+      {% if user.is_authenticated %}
+        <form method="post" action="{% url 'app_auth:logout' %}">
+          {% csrf_token %}
+          <input type="submit" value="Cerrar sesión">
+        </form>
+      
+      {% endif %}
       </div>
     </main>
     <footer>
