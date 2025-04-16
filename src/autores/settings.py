@@ -135,3 +135,5 @@ LOGOUT_URL = '/logout/'
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_REDIRECT_URL = '/frases/'
 
+APPEND_SLASH = False
+
